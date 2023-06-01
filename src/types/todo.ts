@@ -16,5 +16,5 @@ export enum Sort {
     Uncompleted = 'Uncompleted'
 }
 
-export type TodoType = Array<ITodo>
+export type TodosType = Array<ITodo>
 

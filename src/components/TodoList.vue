@@ -1,14 +1,14 @@
 <script setup lang="ts">
     import {ref, computed, onMounted} from 'vue'
     import api from '../helpers/api/api'
-    import {ITodo, Sort, TodoType, IUpdateTodo} from '../types/todo'
+    import {ITodo, Sort, TodosType, IUpdateTodo} from '../types/todo'
     import TodoItem from './TodoItem.vue';
     import AddTodo from './AddTodo.vue';
     import TodoFilters from './TodoFilters.vue';
     import TodoLoader from './TodoLoader.vue'
 
     const title = ref<string>('Todo List');
-    const todos = ref<TodoType>([]);
+    const todos = ref<TodosType>([]);
     const loaded = ref<boolean>(false);
     const sort = ref<Sort>(Sort.All);
 
@@ -40,7 +40,7 @@
       }))
     }
 
-    const filtredTodos = computed(():TodoType => {
+    const filtredTodos = computed(():TodosType => {
       if(sort.value == Sort.All) {
         return todos.value
       }
